@@ -15,13 +15,15 @@ VOLUME   /data/db
 # add files to working dir
 COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./backup.sh ./config.sh /my_scripts/
-COPY   ./my_supersivord.conf /etc/supervisor/conf.d/
-COPY   ./data/backup /data/backup
+COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
+
+# directory
+ADD   ./data/backup /data/backup
 
 # Install app dependencies
 RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x /my_scripts/backup.sh
 
 EXPOSE  27017
 
-# primary or secondary --dbpath /data/db
+# standalone --dbpath /data/db
 CMD sh /my_scripts/config.sh
