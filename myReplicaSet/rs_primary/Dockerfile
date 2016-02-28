@@ -19,9 +19,9 @@ COPY   ./my_supersivord.conf /etc/supervisor/conf.d/
 COPY   ./data/backup /data/backup
 
 # Install app dependencies
-RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x 
+RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x /my_scripts/backup.sh
 
 EXPOSE  27017
 
-# primary or secondary --dbpath /data/db ; arbiter --dbpath /data/arb
-CMD sh config.sh
+# primary or secondary --dbpath /data/db
+CMD sh /my_scripts/config.sh

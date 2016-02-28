@@ -1,2 +1,2 @@
 # config. shell
-mongod --noprealloc --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --replSet "rs0"
+mongod --dbpath /data/arb --noprealloc --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --replSet "rs0"
