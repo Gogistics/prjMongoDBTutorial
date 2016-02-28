@@ -22,3 +22,9 @@ Section 3. Sharding
 + Configuration Tools: docker
 
 NOTE: If you are using Mac or Windows OS, you can install Vituralbox to run Linux OS
+
+Ref. Links:
+
+- https://docs.docker.com/linux/step_one/
+- https://docs.docker.com/engine/installation/mac/
+- https://docs.docker.com/windows/step_one/
