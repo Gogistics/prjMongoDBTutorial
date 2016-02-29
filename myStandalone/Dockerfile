@@ -13,8 +13,8 @@ RUN    apt-get clean
 VOLUME   /data/db
 
 # add files to working dir
-COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./backup.sh ./config.sh /my_scripts/
+COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
 
 # directory
@@ -26,4 +26,4 @@ RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile
 EXPOSE  27017
 
 # standalone --dbpath /data/db
-CMD sh /my_scripts/config.sh
+CMD mongod --dbpath /data/db --noprealloc --smallfiles --keyFile /opt/keyfile/mongodb-keyfile
