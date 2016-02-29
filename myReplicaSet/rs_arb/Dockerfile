@@ -20,6 +20,10 @@ COPY   ./data/backup /data/backup
 # Install app dependencies
 RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile
 
+# set work dir
+WORKDIR /my_scripts
+
+# expose ports
 EXPOSE  27017
 
 # arbiter --dbpath /data/arb

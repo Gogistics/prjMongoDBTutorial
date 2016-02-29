@@ -23,7 +23,11 @@ ADD   ./data/backup /data/backup
 # Install app dependencies
 RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x /my_scripts/backup.sh
 
+# set work dir
+WORKDIR /my_scripts
+
+# expose ports
 EXPOSE  27017
 
 # standalone --dbpath /data/db
-CMD mongod --dbpath /data/db --noprealloc --smallfiles --keyFile /opt/keyfile/mongodb-keyfile
+CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile
