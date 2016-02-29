@@ -1,7 +1,4 @@
 # backup mongodb
-backup_user=test_user
-user_pwd=standalonetestuser
-
 while true
 do
   # set timestamp
