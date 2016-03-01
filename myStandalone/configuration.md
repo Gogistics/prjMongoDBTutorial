@@ -22,4 +22,6 @@ docker run --name mongo_standalone -p 27017:27017 -d alantai/my_standalone_mongo
 
 docker exec mongo_standalone bash ./config.sh
 
+docker exec -d mongo_standalone bash ./backup.sh
+
 docker exec -it mongo_standalone bash
