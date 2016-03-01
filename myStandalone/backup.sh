@@ -4,7 +4,7 @@ do
   # set timestamp
   timestamp=$(date +"%s")
   backup_file_name="mongodump-$timestamp"
-  # backup mongodb
-  mongodump --db test --username $backup_user --password $user_pwd --out /data/backup/$backup_file_name
+  # backup mongodb; username: test_user; password: standalonetestuser
+  mongodump --db test --username test_user --password standalonetestuser --out /data/backup/$backup_file_name
   sleep 12h
 done
