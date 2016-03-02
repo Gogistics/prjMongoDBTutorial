@@ -36,4 +36,4 @@ WORKDIR /my_scripts
 EXPOSE  27017
 
 # standalone --dbpath /data/db
-CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --sslMode requireSSL --sslPEMKeyFile /etc/ssl/mongodb.pem
+CMD mongod --bind_ip 127.0.0.1 --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --sslMode requireSSL --sslPEMKeyFile /etc/ssl/mongodb.pem
