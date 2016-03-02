@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Gogistics/prjMongoDBTutorial/issues"
   },
-  "homepage": "https://github.com/Gogistics/prjMongoDBTutorial#readme"
+  "homepage": "https://github.com/Gogistics/prjMongoDBTutorial#readme",
+  "devDependencies": {
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.5"
+  }
 }
