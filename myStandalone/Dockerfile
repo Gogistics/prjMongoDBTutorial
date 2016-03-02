@@ -18,14 +18,17 @@ VOLUME   /data/db
 
 # add files to working dir
 COPY   ./backup.sh ./config.sh /my_scripts/
-COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
+COPY   ./mongodb-keyfile ./mongodb-encryption-keyfile /opt/keyfile/
+COPY   ./mongodb-cert.key ./mongodb-cert.crt ./mongodb.pem /etc/ssl/
 COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
 
 # directory
 ADD   ./data/backup /data/backup
 
 # Install app dependencies
-RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x /my_scripts/backup.sh
+RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile
+RUN    chmod 600 /opt/keyfile/mongodb-encryption-keyfile && chown 999 /opt/keyfile/mongodb-encryption-keyfile
+RUN    chmod +x /my_scripts/backup.sh
 
 # set work dir
 WORKDIR /my_scripts
@@ -34,4 +37,4 @@ WORKDIR /my_scripts
 EXPOSE  27017
 
 # standalone --dbpath /data/db
-CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile
+CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --enableEncryption --encryptionKeyFile /opt/keyfile/mongodb-encryption-keyfile
