@@ -1,4 +1,7 @@
 ### Configuration Steps
+NOTE: You can create your own Dockerfile or clone this repo. and use the existing Dockerfile to create a standalone container
+
+------
 
 **1. Create folders**
 
@@ -12,18 +15,11 @@ cd myReplicaSet
 
 openssl rand -base64 741 > /srv/mongodb/mongodb-keyfile
 
-openssl rand -base64 32 > mongodb-encryption-keyfile
-
-openssl req -newkey rsa:2048 -new -x509 -days 10000 -nodes -out mongodb-cert.crt -keyout mongodb-cert.key
-
 cat mongodb-cert.key mongodb-cert.crt > mongodb.pem
 
 **Edit Dockerfile**
 
 nano Dockerfile
-
-NOTE: You can create your own Dockerfile or clone this repo. and use the existing Dockerfile to create a standalone container
-
 
 **3. Build Images, run container, and set authentication**
 

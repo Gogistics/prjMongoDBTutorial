@@ -1,4 +1,6 @@
-/* basic operation */
+/* basic operation
+* Ref. https://docs.mongodb.org/manual/reference/method/db.collection.createIndex/
+*/
 var MongoClient = require('mongodb').MongoClient,
     assert = require('assert'),
     my_close_db_action,
