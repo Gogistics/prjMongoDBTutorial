@@ -2,6 +2,8 @@
 
 This tutorial basically include three sections, the first section is about creating a standalone container, the second section is about creating a MongoDB replica set, and the third section is about creating a MongoDB sharding. Debian 7 and 8.1 are used in this tutorial.
 
+[Slides on Google Drive](https://drive.google.com/folderview?id=0BzeAAvM5Ha9sNHh3SU4tYkRtYUU&usp=sharing)
+
 ------
 
 Section 1. Standalone
