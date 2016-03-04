@@ -13,7 +13,7 @@ RUN    apt-get clean
 # set env
 ENV    backup_user=test_user user_pwd=standalonetestuser
 
-# create volume; /data/db for replica set /data/arb for arbiter
+# create volume; /data/db for replica set
 VOLUME   /data/db
 
 # add files to working dir
