@@ -23,10 +23,10 @@ MongoClient.connect(url, function(err, db) {
   }
 
   // inser tnew doc
-  insert_if_not_exist('eric@hotmail.com', {email: 'eric@hotmail.com', first_name: 'Eric', last_name: 'Kent', phone: '(610) 113-2311', birth_year: '1977'});
+  // insert_if_not_exist('mary@hotmail.com', {email: 'mary@hotmail.com', first_name: 'Mary', last_name: 'Lisan', phone: '(650) 456-2311', birth_year: '1977', annual_salary: 87200});
 
   // update doc
-  update_doc('mary@gmail.com');
+  update_doc( { first_name: "Eric" }, { annual_salary: 71200 }, 'set', false);
 
   // query
   find_docs({});
@@ -51,8 +51,18 @@ function insert_if_not_exist(arg_email, arg_user_info){
 
 // update docs
 var is_update_doc_done = false;
-function update_doc(arg_email){
-  users_collection.updateOne({ email: arg_email }, { $set: { gender : 'F' } }, function(err, doc) {
+function update_doc(arg_query, arg_updated_doc, arg_operator, arg_upsert){
+  var updated_doc;
+  switch(arg_operator){
+    case 'set':
+      updated_doc = { $set: arg_updated_doc };
+      break;
+    default:
+      updated_doc = arg_updated_doc;
+      break;
+  }
+
+  users_collection.update(arg_query, updated_doc, { upsert: arg_upsert }, function(err, doc) {
     if(!err){
       console.log(doc);
     }else{
@@ -78,9 +88,9 @@ function find_docs(arg_query){
 
 // close db if all operations are done
 function close_db(arg_db){
-  if( is_insert_if_not_exist_done &&
-      is_update_doc_done &&
+  if( is_update_doc_done &&
       is_find_docs){
+
     // clear timeout action
     if(my_close_db_action) clearTimeout(my_close_db_action);
     if(arg_db) arg_db.close();
