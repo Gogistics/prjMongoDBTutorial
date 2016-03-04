@@ -16,7 +16,9 @@ NOTE: You can create your own Dockerfile or clone this repo. and use the existin
 
 **3. Create Images**
 
-docker build -t alantai/my_primary ./rs_primary
+cd /PATH-TO-rs_primary
+
+docker build -t alantai/my_primary .
 
 docker build -t alantai/my_secondary ./rs_secondary
 

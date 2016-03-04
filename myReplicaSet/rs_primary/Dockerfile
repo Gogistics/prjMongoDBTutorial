@@ -19,7 +19,7 @@ VOLUME   /data/db
 # add files to working dir
 COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./backup.sh ./config.sh /my_scripts/
-COPY   ./my_supersivord.conf /etc/supervisor/conf.d/
+COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
 
 # add repo.
 ADD    ./data/backup /data/backup
