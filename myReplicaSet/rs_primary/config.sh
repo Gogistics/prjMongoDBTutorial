@@ -1,6 +1,7 @@
 # config. shell
 # create authentication script
 echo "rs.initiate()" >> authentication.js
+echo "rs.conf()" >> authentication.js
 echo "use admin" >> authentication.js
 echo "db.createUser({user:'siteUserAdmin',pwd:'standaloneadmin',roles:[{role:'userAdminAnyDatabase',db:'admin'}]})" >> authentication.js
 echo "db.auth('siteUserAdmin', 'standaloneadmin')" >> authentication.js
