@@ -25,7 +25,7 @@ nano Dockerfile
 
 docker build -t alantai/my_standalone_mongodb .
 
-docker run --name mongo_standalone -p 27017:27017 -d alantai/my_standalone_mongodb
+docker run --name mongo_standalone -p 27025:27017 -d alantai/my_standalone_mongodb
 
 docker exec mongo_standalone bash ./config.sh
 

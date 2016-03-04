@@ -20,7 +20,9 @@ VOLUME   /data/db
 COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./backup.sh ./config.sh /my_scripts/
 COPY   ./my_supersivord.conf /etc/supervisor/conf.d/
-COPY   ./data/backup /data/backup
+
+# add repo.
+ADD    ./data/backup /data/backup
 
 # Install app dependencies
 RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile && chmod +x /my_scripts/backup.sh

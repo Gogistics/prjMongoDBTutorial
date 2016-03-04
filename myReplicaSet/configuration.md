@@ -15,3 +15,4 @@ nano Dockerfile
 NOTE: You can create your own Dockerfile or clone this repo. and use the existing Dockerfile to create a replica set
 
 **3. Create Images**
+

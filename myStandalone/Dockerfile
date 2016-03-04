@@ -22,7 +22,7 @@ COPY   ./mongodb-keyfile /opt/keyfile/
 COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
 
 # directory
-ADD   ./data/backup /data/backup
+ADD    ./data/backup /data/backup
 
 # Install app dependencies
 RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile

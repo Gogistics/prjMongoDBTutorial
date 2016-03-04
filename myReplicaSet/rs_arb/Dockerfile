@@ -15,7 +15,6 @@ VOLUME   /data/arb
 # add files to working dir
 COPY   ./mongodb-keyfile /opt/keyfile/mongodb-keyfile
 COPY   ./config.sh /my_scripts/
-COPY   ./data/backup /data/backup
 
 # Install app dependencies
 RUN    cd /opt/keyfile && chmod 600 mongodb-keyfile && chown 999 mongodb-keyfile
