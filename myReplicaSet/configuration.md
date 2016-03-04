@@ -20,6 +20,19 @@ cd /PATH-TO-rs_primary
 
 docker build -t alantai/my_primary .
 
-docker build -t alantai/my_secondary ./rs_secondary
+cd /PATH-TO-rs_secondary
 
-docker build -t alantai/my_arb ./rs_arb
+docker build -t alantai/my_secondary .
+
+cd /PATH-TO-rs_arb
+
+docker build -t alantai/my_arb .
+
+**4. Run Containers
+
+docker run --name replica_set_0_primary -p 27027:27017 -d alantai/my_primary
+
+docker run --name replica_set_0_secondary -p 27028:27017 -d alantai/my_secondary
+
+docker run --name replica_set_0_arb -p 27029:27017 -d alantai/my_arb
+
