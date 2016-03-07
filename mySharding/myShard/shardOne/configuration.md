@@ -30,16 +30,16 @@ docker build -t alantai/my_arb .
 
 **4. Run Containers
 
-docker run --name replica_set_0_arb -p 27043:27017 -d alantai/my_arb
+docker run --name replica_set_1_arb -p 27043:27017 -d alantai/my_arb
 
-docker run --name replica_set_0_secondary -p 27042:27017 -d alantai/my_secondary
+docker run --name replica_set_1_secondary -p 27042:27017 -d alantai/my_secondary
 
-docker run --name replica_set_0_primary -p 27041:27017 -d alantai/my_primary
+docker run --name replica_set_1_primary -p 27041:27017 -d alantai/my_primary
 
 **5. Add secondary and arbiter containers to primary container, and start backup mechanism
 
-docker exec replica_set_0_primary bash ./config.sh
+docker exec replica_set_1_primary bash ./config.sh
 
-docker exec -d replica_set_0_primary bash ./backup.sh
+docker exec -d replica_set_1_primary bash ./backup.sh
 
-docker exec -d replica_set_0_secondary bash ./backup.sh
+docker exec -d replica_set_1_secondary bash ./backup.sh

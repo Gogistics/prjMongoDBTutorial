@@ -34,4 +34,4 @@ WORKDIR /my_scripts
 EXPOSE  27017
 
 # primary or secondary --dbpath /data/db
-CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --replSet "rs0"
+CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile --replSet "rs2"

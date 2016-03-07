@@ -8,13 +8,25 @@ This tutorial basically include three sections, the first section is about creat
 
 Section 1. Standalone
 
+In this section, a docker container which runs a standalone MongoDB will be created
+
 ======
 
 Section 2. Replica Set
 
+In this section, three docker conatiners which respectively run primary, secondary, and arbiter will be created
+
 ======
 
 Section 3. Sharding
+
+In this section, three groups including mongos group, config-servers group, and sharding group will be created
+
+* mongos group include two containers which run mongos
+
+* config-server group include three containers which run config. servers
+
+* sharding group include three shards which respectively run a replica set; a replica set include three containers which respectively run primary, secondary, and arbiter
 
 ------
 
