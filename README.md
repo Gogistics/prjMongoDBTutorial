@@ -30,3 +30,4 @@ Ref. Links:
 - https://docs.docker.com/linux/step_one/
 - https://docs.docker.com/engine/installation/mac/
 - https://docs.docker.com/windows/step_one/
+- https://github.com/docker/docker/issues/16878 (if you get error "Depends: init-system-helpers (>= 1.18~) but it is not installable")
