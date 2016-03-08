@@ -1,0 +1,27 @@
+{
+  "name": "test_for_mongodb",
+  "version": "1.0.0",
+  "description": "test the operation with standalone mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gogistics/prjMongoDBTutorial.git"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": "Alan Tai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gogistics/prjMongoDBTutorial/issues"
+  },
+  "homepage": "https://github.com/Gogistics/prjMongoDBTutorial#readme",
+  "devDependencies": {
+    "jsonfile": "^2.2.3",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.5"
+  }
+}
