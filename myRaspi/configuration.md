@@ -2,6 +2,8 @@
 
 **Install Docker on Raspberry Pi 2**
 
+$ cd /PATH_TO_YOUR_RASPBERRY_PI_PRJ
+
 $ curl -sSL http://downloads.hypriot.com/docker-hypriot_1.8.2-1_armhf.deb >/tmp/docker-hypriot_1.8.2-1_armhf.deb
 
 $ sudo dpkg -i /tmp/docker-hypriot_1.8.2-1_armhf.deb
