@@ -9,6 +9,9 @@ RUN    DEBIAN_FRONTEND=noninteractive apt-get install -yq apt-utils git build-es
 RUN    apt-get update
 RUN    apt-get clean
 
+# set env
+ENV    backup_user=test_user user_pwd=shardingtestuser
+
 # set volume
 VOLUME   /data/configdb
 

@@ -4,15 +4,15 @@ echo "rs.initiate()" >> authentication.js
 echo "rs.status()" >> authentication.js
 echo "sleep(3000)" >> authentication.js
 echo "use admin" >> authentication.js
-echo "db.createUser({user:'siteUserAdmin',pwd:'standaloneadmin',roles:[{role:'userAdminAnyDatabase',db:'admin'}]})" >> authentication.js
-echo "db.auth('siteUserAdmin', 'standaloneadmin')" >> authentication.js
-echo "db.createUser({user:'siteRootAdmin',pwd:'standaloneadmin',roles:[{role:'root',db:'admin'}]})" >> authentication.js
-echo "db.auth('siteRootAdmin', 'standaloneadmin')" >> authentication.js
+echo "db.createUser({user:'siteUserAdmin',pwd:'shardingadmin',roles:[{role:'userAdminAnyDatabase',db:'admin'}]})" >> authentication.js
+echo "db.auth('siteUserAdmin', 'shardingadmin')" >> authentication.js
+echo "db.createUser({user:'siteRootAdmin',pwd:'shardingadmin',roles:[{role:'root',db:'admin'}]})" >> authentication.js
+echo "db.auth('siteRootAdmin', 'shardingadmin')" >> authentication.js
 echo "use test" >> authentication.js
-echo "db.createUser({user:'test_user',pwd:'standalonetestuser',roles:[{role:'readWrite',db:'test'}]})" >> authentication.js
-echo "db.auth('test_user', 'standalonetestuser')" >> authentication.js
+echo "db.createUser({user:'test_user',pwd:'shardingtestuser',roles:[{role:'readWrite',db:'test'}]})" >> authentication.js
+echo "db.auth('test_user', 'shardingtestuser')" >> authentication.js
 echo "use admin" >> authentication.js
-echo "db.auth('siteRootAdmin', 'standaloneadmin')" >> authentication.js
+echo "db.auth('siteRootAdmin', 'shardingadmin')" >> authentication.js
 echo "rs.status()" >> authentication.js
 echo "rs.conf()" >> authentication.js
 echo "sleep(1000)" >> authentication.js

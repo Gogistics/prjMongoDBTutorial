@@ -18,23 +18,23 @@ NOTE: You can create your own Dockerfile or clone this repo. and use the existin
 
 cd /PATH-TO-rs_primary
 
-docker build -t alantai/my_primary .
+docker build -t alantai/my_shard_one_primary .
 
 cd /PATH-TO-rs_secondary
 
-docker build -t alantai/my_secondary .
+docker build -t alantai/my_shard_one_secondary .
 
 cd /PATH-TO-rs_arb
 
-docker build -t alantai/my_arb .
+docker build -t alantai/my_shard_one_arb .
 
 **4. Run Containers
 
-docker run --name replica_set_1_arb -p 27043:27017 -d alantai/my_arb
+docker run --name replica_set_1_arb -p 27043:27017 -d alantai/my_shard_one_arb
 
-docker run --name replica_set_1_secondary -p 27042:27017 -d alantai/my_secondary
+docker run --name replica_set_1_secondary -p 27042:27017 -d alantai/my_shard_one_secondary
 
-docker run --name replica_set_1_primary -p 27041:27017 -d alantai/my_primary
+docker run --name replica_set_1_primary -p 27041:27017 -d alantai/my_shard_one_primary
 
 **5. Add secondary and arbiter containers to primary container, and start backup mechanism
 

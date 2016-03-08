@@ -11,7 +11,7 @@ RUN    apt-get update
 RUN    apt-get clean
 
 # set env
-ENV    backup_user=test_user user_pwd=standalonetestuser
+ENV    backup_user=test_user user_pwd=shardingtestuser
 
 # create volume; /data/db for replica set
 VOLUME   /data/db
