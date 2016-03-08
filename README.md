@@ -29,6 +29,12 @@ In this section, three groups including mongos group, config-servers group, and 
 
 * sharding group include three shards which respectively run a replica set; a replica set include three containers which respectively run primary, secondary, and arbiter
 
+======
+
+Section 4. MongoDB with Docker on Raspberry Pi 2
+
+* In this section, docker containers of MongoDB will be created on the Raspberry Pi (the purpose of MongoDB setup on Raspberry Pi is for the further IoT development)
+
 ------
 
 ### Prerequisites
@@ -40,7 +46,8 @@ NOTE: If you are using Mac or Windows OS, you can install Vituralbox to run Linu
 
 Ref. Links:
 
-- https://docs.docker.com/linux/step_one/
-- https://docs.docker.com/engine/installation/mac/
-- https://docs.docker.com/windows/step_one/
-- https://github.com/docker/docker/issues/16878 (if you get error "Depends: init-system-helpers (>= 1.18~) but it is not installable")
+- [Install Docker on Linux](https://docs.docker.com/linux/step_one/)
+- [Install Docker on Mac](https://docs.docker.com/engine/installation/mac/)
+- [Install Docker on Windows](https://docs.docker.com/windows/step_one/)
+- [Issue Solution (if you get error "Depends: init-system-helpers (>= 1.18~) but it is not installable")](https://github.com/docker/docker/issues/16878)
+- [Docker Installation on Raspberry Pi](https://github.com/umiddelb/armhf/wiki/Get-Docker-up-and-running-on-the-RaspberryPi-%28ARMv6%29-in-three-steps)
