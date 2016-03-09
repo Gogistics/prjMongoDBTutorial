@@ -25,6 +25,8 @@ ADD    ./data/backup /data/backup
 # Install app dependencies
 RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile
 RUN    chmod +x /my_scripts/backup.sh
+RUN    chmod +x /mongodb-rpi/mongo/bin/mongo && cp /mongodb-rpi/mongo/bin/mongo /usr/bin/mongo
+RUN    chmod +x /mongodb-rpi/mongo/bin/mongodump && cp /mongodb-rpi/mongo/bin/mongodump /usr/bin/mongodump
 
 # set work dir
 WORKDIR /my_scripts
