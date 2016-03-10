@@ -1,10 +1,12 @@
 # my twitter stream server
-FROM    cretzel/rpi-mongodb
+FROM    resin/rpi-raspbian
 
 # File Author / Maintainer
 MAINTAINER Alan Tai <gogistics@gogistics-tw.com>
 
 # run commands
+RUN    apt-get update
+RUN    DEBIAN_FRONTEND=noninteractive apt-get install -y mongodb-server
 RUN    apt-get update
 RUN    apt-get clean
 
@@ -25,8 +27,6 @@ ADD    ./data/backup /data/backup
 # Install app dependencies
 RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile
 RUN    chmod +x /my_scripts/backup.sh
-RUN    chmod +x /mongodb-rpi/mongo/bin/mongo && cp /mongodb-rpi/mongo/bin/mongo /usr/bin/mongo
-RUN    chmod +x /mongodb-rpi/mongo/bin/mongodump && cp /mongodb-rpi/mongo/bin/mongodump /usr/bin/mongodump
 
 # set work dir
 WORKDIR /my_scripts
@@ -35,4 +35,4 @@ WORKDIR /my_scripts
 EXPOSE  27017
 
 # standalone --dbpath /data/db
-CMD mongod --dbpath /data/db --smallfiles --keyFile /opt/keyfile/mongodb-keyfile
+CMD mongod --dbpath /data/db --smallfiles
