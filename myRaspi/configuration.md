@@ -16,7 +16,7 @@ $ sudo systemctl enable docker.service
 
 **Build MongoDB Images**
 
-continue...
+Take a look at the configuration.md under different folders for reference.
 
 ------
 
