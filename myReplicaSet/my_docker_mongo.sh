@@ -13,12 +13,12 @@
 # Carry out specific functions when asked to by the system
 case "$1" in
   start)
-    echo "Starting standalone mongo container"
+    echo "Starting the docker containers running mongo replica set"
     # run application you want to start
-    docker restart mongo_standalone
+    docker restart replica_set_0_primary replica_set_0_secondary replica_set_0_arb
     ;;
   stop)
-    echo "Stopping standalone mongo container"
+    echo "Stopping the docker containers running mongo replica set"
     # kill application you want to stop
     killall mongod
     ;;

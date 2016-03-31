@@ -44,6 +44,7 @@ $ /etc/init.d/my_docker_mongo stop
 $ update-rc.d my_docker_mongo defaults
 
 **Import Data to DB**
+
 EX:
 
 mongoimport --db test -u test_user -p standalonetestuser --file ./us_economic_assistance.csv --headerline --type csv -c us_economic_assistance --drop --ignoreBlanks
