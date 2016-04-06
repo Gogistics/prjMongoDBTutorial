@@ -18,14 +18,28 @@ MongoClient.connect(url, function(err, db) {
   us_economic_assistance_collection = db.collection('us_economic_assistance');
 
   // aggregation pipeline with regex; first do match and the requirement is age greater than 75 and country name start with capital M, and then group by the result by country name and do sum
-  life_expectancy_collection.aggregate([{$match: {age: {$gt: 75}, country: /^M/}}, {$group: {_id: "$country", total: {$sum: "$age"}}}]).toArray(function(err, docs){
-    if(!err){
-      console.log(docs);
-    }else{
-      console.log(err);
-    }
-    // close db once testing id done
-    db.close();
-  });
+  // life_expectancy_collection.aggregate([{$match: {age: {$gt: 75}, country: /^M/}}, {$group: {_id: "$country", total: {$sum: "$age"}}}]).toArray(function(err, docs){
+  //   if(!err){
+  //     console.log(docs);
+  //   }else{
+  //     console.log(err);
+  //   }
+  //   // close db once testing id done
+  //   db.close();
+  // });
+
+  // aggregation
+  life_expectancy_collection.aggregate([{$match: {age: {$gt: 75}, country: /^M/}},
+                                        {$group: {_id: "$country", total: {$sum: "$age"}}},
+                                        {$sort: {total: -1}}])
+                            .toArray(function(err, docs){
+                              if(!err){
+                                console.log(docs);
+                              }else{
+                                console.log(err);
+                              }
+                              // close db once testing id done
+                              db.close();
+                            });
 });
 /* end of mongodb */
