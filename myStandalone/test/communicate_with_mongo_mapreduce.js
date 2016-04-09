@@ -51,7 +51,7 @@ MongoClient.connect(url, function(err, db) {
   var res = life_expectancy.mapReduce(life_expect_map, my_reduce, {out: {reduce: 'joined'}});
   res = us_economic_assistance.mapReduce(us_econ_map, my_reduce, {out: {reduce: 'joined'}});
   var joined_res = joined.find({'value.dollars': {$gt:0}, 'value.life_expectancy': {$gt:0}}).sort({'value.life_expectancy':1}).limit(10);
-// console.log(joined_res);
+  // console.log(joined_res);
 
   // close db once testing id done
   // db.close();
