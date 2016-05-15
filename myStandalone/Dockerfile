@@ -5,10 +5,10 @@ FROM    mongo
 MAINTAINER Alan Tai <gogistics@gogistics-tw.com>
 
 # run commands
-RUN    apt-get update
-RUN    DEBIAN_FRONTEND=noninteractive apt-get install -yq apt-utils git build-essential supervisor
-RUN    apt-get update
-RUN    apt-get clean
+RUN    apt-get update && \
+	   DEBIAN_FRONTEND=noninteractive apt-get install -yq apt-utils git build-essential supervisor && \
+	   apt-get update && \
+	   apt-get clean
 
 # set env
 ENV    backup_user=test_user user_pwd=standalonetestuser
@@ -25,8 +25,8 @@ COPY   ./my_supervisord.conf /etc/supervisor/conf.d/
 ADD    ./data/backup /data/backup
 
 # Install app dependencies
-RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile
-RUN    chmod +x /my_scripts/backup.sh
+RUN    chmod 600 /opt/keyfile/mongodb-keyfile && chown 999 /opt/keyfile/mongodb-keyfile && \
+	   chmod +x /my_scripts/backup.sh
 
 # set work dir
 WORKDIR /my_scripts
