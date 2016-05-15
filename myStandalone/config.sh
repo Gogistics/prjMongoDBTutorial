@@ -1,5 +1,8 @@
 # config. shell
 # set authentication
+# test db
+# strider db: db.createUser({user:'strider_user',pwd:'standalonestrider',roles:[{role:'readWrite',db:'my_strider'}]})
+# strider db: db.createUser({user: "strider_admin", pwd: "standalonestrideradmin", roles: [{role: "dbOwner",db: 'my_strider'}]})
 echo "use admin" >> authentication.js
 echo "db.createUser({user:'siteUserAdmin',pwd:'standaloneadmin',roles:[{role:'userAdminAnyDatabase',db:'admin'}]})" >> authentication.js
 echo "db.auth('siteUserAdmin', 'standaloneadmin')" >> authentication.js
